@@ -1,0 +1,61 @@
+{
+  "students": [
+    { "id": 0, "name": "Michel Michel", "courses": [0] },
+    { "id": 1, "name": "Jean-pierre Oui", "courses": [0] }
+  ],
+  "profs": [
+    {
+      "id": 0,
+      "name": "Laurent Simon",
+      "type": ["lectures", "recitations"],
+      "skills": ["SAT"],
+      "unavailabilities": ["timestamp1", "timestamp2"],
+      "working_hours": 172
+    }
+  ],
+  "rooms": [
+    {
+      "id": 0,
+      "name": "I009",
+      "size": 26,
+      "type": "computer",
+      "place": ["ENSEIRB"]
+    },
+    { "id": 1, "name": "TD6", "size": 16, "type": "TD", "place": ["CREMI"] },
+    {
+      "id": 2,
+      "name": "grand amphi",
+      "size": 500,
+      "type": "amphi",
+      "place": ["ENSEIRB"]
+    }
+  ],
+  "courses": [
+    {
+      "id": 0,
+      "name": "EG001",
+      "theme": "SAT",
+      "dependencies": [],
+      "lectures": [0],
+      "recitations": [0],
+      "exam_date": "timestamp"
+    }
+  ],
+  "lectures": [
+    {
+      "id": 0,
+      "course": 0,
+      "size": 3,
+      "room_type": "amphi"
+    }
+  ],
+  "recitations": [
+    {
+      "id": 0,
+      "course": 0,
+      "size": 2,
+      "dependancies": [0],
+      "room_type": "computer"
+    }
+  ]
+}
