@@ -35,15 +35,36 @@
       "id": 0,
       "name": "EG001",
       "theme": "SAT",
-      "num_hours": 3,
+      "dependencies": [],
+      "lectures": [0],
+      "recitations": [0],
       "exam_date": "timestamp"
+    }
+  ],
+  "lectures": [
+    {
+      "id": 0,
+      "course": 0,
+      "num_hours": 3,
+      "room_type": "amphi"
+    }
+  ],
+  "recitations": [
+    {
+      "id": 0,
+      "course": 0,
+      "num_hours": 2,
+      "lectures_dependancies": [0],
+      "recitations_dependancies": [],
+      "room_type": "computer"
     },
     {
       "id": 1,
-      "name": "EG001",
-      "theme": "SAT",
-      "num_hours": 3,
-      "exam_date": "timestamp"
+      "course": 0,
+      "num_hours": 2,
+      "lectures_dependancies": [0],
+      "recitations_dependancies": [0],
+      "room_type": "TD"
     }
   ]
 }

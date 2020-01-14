@@ -1,0 +1,21 @@
+<instance format="XCSP3" type="CSP">
+  <variables>
+    <array id="x" size="[10]"> 0..9 </array>
+  </variables>
+  <constraints>
+    <cardinality>
+      <list> x[] </list>
+      <values> 0 1 2 3 4 5 6 7 8 9 </values>
+      <occurs> x[] </occurs>
+    </cardinality>
+    <sum>
+      <list> x[] </list>
+      <condition> (eq,10) </condition>
+    </sum>
+    <sum>
+      <list> x[] </list>
+      <coeffs> -1 0 1 2 3 4 5 6 7 8 </coeffs>
+      <condition> (eq,0) </condition>
+    </sum>
+  </constraints>
+</instance>

@@ -1,0 +1,15 @@
+<instance format="XCSP3" type="CSP">
+  <variables>
+    <array id="students_array" size="[2]"> 0 1 </array>
+    <array id="rooms_array" size="[3]"> 0..2 </array>
+    <array id="profs_array" size="[1]"> 0 </array>
+    <array id="courses_array" size="[2]"> 0 1 </array>
+    <array id="slots_array" size="[35]"> 0..34 </array>
+    <array id="courses_slots" note="Y a t il un cours dans ce slot ? 0/1" size="[2][35]"> 0 1 </array>
+    <array id="rooms_slots" note="Num cours par salle par slot" size="[3][35]"> 0 1 </array>
+    <array id="courses_rooms" note="Y a t il un cours dans cette salle ? 0/1" size="[2][3]"> 0 1 </array>
+    <array id="courses_profs" size="[2][1]"> 0 1 </array>
+    <array id="courses_students" size="[2][2]"> 0 1 </array>
+    <array id="x" size="[10]"> 0..9 </array>
+  </variables>
+</instance>
