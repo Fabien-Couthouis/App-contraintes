@@ -19,22 +19,37 @@ courses_array = VarArray(size=n_courses, dom=range(n_courses))
 slots_array = VarArray(size=n_slots, dom=range(n_slots))
 
 
-# Y a t il un cours dans ce slot ? 0/1
+# Y a t il un cours dans ce créneau ? 0/1
 courses_slots = VarArray(size=[n_courses, n_slots], dom={0, 1})
 # Num cours par salle par slot
 rooms_slots = VarArray(size=[n_rooms, n_slots], dom=range(n_courses))
 # Y a t il un cours dans cette salle ? 0/1
 courses_rooms = VarArray(size=[n_courses, n_rooms], dom={0, 1})
 
-courses_profs = VarArray(size=[n_courses, n_profs], dom=range(n_courses))
+
+courses_profs = VarArray(size=[n_courses, n_profs], dom={0, 1})
+profs_slots = VarArray(size=[n_profs, n_slots], dom={0, 1})
+
 courses_students = VarArray(size=[n_courses, n_students], dom=range(n_courses))
 
-n = 10
-x = VarArray(size=n, dom=range(n))
+
 satisfy(
-    # [rooms_slots[i, j] == Sum([courses_slots[x, j] * courses_rooms[x, i]
-    #                            for x in range(n_courses)]) for i, j in product(range(n_rooms), range(n_slots))]
-    [rooms_slots[0, 0] == Sum([courses_slots[0, 0], courses_slots[0, 1]])]
+    # Assigner les cours à des salles et des créneaux (Hard 1)
+    # rooms_slots[i, j] = sum(courses_slots[x, j] * courses_rooms[x, i])
+    [Sum([courses_slots[x, j] * courses_rooms[x, i]
+          for x in range(n_courses)]) == rooms_slots[i, j] for i, j in product(range(n_rooms), range(n_slots))],
+
+    #courses_rooms[i][j] = courses_slots[i, x] * rooms_slots[j, x]
+    [courses_rooms[i][j] == courses_slots[i, x] * rooms_slots[j, x]
+        for x, i, j in product(range(n_slots), range(n_courses), range(n_rooms))],
+
+
+    # Assigner un professeur à un seul endroit (Hard 2)
+    [Sum([courses_slots[x, j] * courses_profs[x, i]
+          for x in range(n_courses)]) == profs_slots[i, j] for i, j in product(range(n_profs), range(n_slots))],
+
+
+
 
 
 )
