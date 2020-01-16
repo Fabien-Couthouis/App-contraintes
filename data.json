@@ -1,4 +1,5 @@
 {
+  "skills": ["SAT", "Python"],
   "students": [
     { "id": 0, "name": "Michel Michel", "courses": [0] },
     { "id": 1, "name": "Jean-pierre Oui", "courses": [0] }
@@ -8,8 +9,8 @@
       "id": 0,
       "name": "Laurent Simon",
       "type": ["lectures", "recitations"],
-      "skills": ["SAT"],
-      "unavailabilities": ["timestamp1", "timestamp2"],
+      "skills": [0, 1],
+      "unavailabilities": [2, 8],
       "working_hours": 172
     }
   ],
@@ -34,14 +35,14 @@
     {
       "id": 0,
       "name": "EG001",
-      "theme": "SAT",
+      "theme": 0,
       "num_hours": 3,
       "exam_date": "timestamp"
     },
     {
       "id": 1,
       "name": "EG001",
-      "theme": "SAT",
+      "theme": 0,
       "num_hours": 3,
       "exam_date": "timestamp"
     }

@@ -1,21 +1,17 @@
 <instance format="XCSP3" type="CSP">
   <variables>
-    <array id="students_array" size="[2]"> 0 1 </array>
-    <array id="rooms_array" size="[3]"> 0..2 </array>
-    <array id="profs_array" size="[1]"> 0 </array>
-    <array id="courses_array" size="[2]"> 0 1 </array>
-    <array id="slots_array" size="[35]"> 0..34 </array>
-    <array id="courses_slots" note="Y a t il un cours dans ce cr&#233;neau ? 0/1" size="[2][35]"> 0 1 </array>
-    <array id="rooms_slots" note="Num cours par salle par slot" size="[3][35]"> 0 1 </array>
-    <array id="courses_rooms" note="Y a t il un cours dans cette salle ? 0/1" size="[2][3]"> 0 1 </array>
-    <array id="courses_profs" size="[2][1]"> 0 1 </array>
-    <array id="profs_slots" size="[1][35]"> 0 1 </array>
-    <array id="courses_students" size="[2][2]"> 0 1 </array>
+    <array id="course_in_slot_room" size="[35][3]"> -1..1 </array>
+    <array id="course_prof" size="[2]"> 0 </array>
   </variables>
   <constraints>
-    <sum>
-      <list> mul(2,3) </list>
-      <condition> (eq,rooms_slots[0][0]) </condition>
-    </sum>
+    <allDifferent note="Assigner les cours &#224; des salles et des creneaux (Hard 0)">
+      <list> course_in_slot_room[][] </list>
+      <except> -1 </except>
+    </allDifferent>
+    <cardinality>
+      <list> course_in_slot_room[][] </list>
+      <values> 0 1 </values>
+      <occurs> 1 1 </occurs>
+    </cardinality>
   </constraints>
 </instance>
