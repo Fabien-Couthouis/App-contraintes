@@ -1,0 +1,97 @@
+
+* Notations in the following
+| DIR       | It stands for the directory where you place scop-for-xcsp18          |
+| TMPDIR    | It is the directory where the solver is allowed to                   |
+|           | create temporary files                                               |
+| BENCHNAME | It stands for the name of the instance file (with its extension)     |
+| NBCORE    | It stands for the number of processing units allocated to the solver |
+
+* How to install
+  - We need to compile 2 SAT solvers respectively for sequential
+    solving and parallel solving. 
+
+** (Sequential CSP) MapleCOMSPS
+#+BEGIN_SRC sh
+cd DIR/MapleCOMSPS
+export MROOT=`pwd`
+cd simp
+make clean
+make r
+#+END_SRC
+
+** (Parallel CSP) glucose-syrup
+#+BEGIN_SRC sh
+cd DIR/syrup
+make clean
+make
+#+END_SRC
+
+** lzma (os command)
+   - we assume an os command 'lzma' is available for decomposing *.xml.lzma instances.
+   - If there is not 'lzma' then simply give *.xml to scop.
+
+* How to run
+  - (NOTE) we here assume 11GB/22GB can be allocated to JVM. This is
+    XCSP18 competition setting but larger heap size is better in
+    principal.
+  - assume that the following command is executed in the 'scop-for-xcsp18' directory.
+  - *(Sequential CSP) with -both option*
+    #+BEGIN_SRC 
+    DIR/scop.sh 11g DIR/scop.jar -both DIR/MapleCOMSPS/simp/minisat_release default TMPDIR BENCHNAME
+    #+END_SRC
+  - *(Sequential CSP) with -order option*
+    #+BEGIN_SRC 
+    DIR/scop.sh 11g DIR/scop.jar -order DIR/MapleCOMSPS/simp/minisat_release default TMPDIR BENCHNAME
+    #+END_SRC
+  - *(Parallel CSP) with -both option*
+    #+BEGIN_SRC 
+    DIR/scop.sh 22g DIR/scop.jar -both DIR/syrup/bin/glucose-syrup -model:-nthreads=NBCORE:-maxmemory=20000 TMPDIR BENCHNAME
+    #+END_SRC
+  - *(Parallel CSP) with -order option*
+    #+BEGIN_SRC 
+    DIR/scop.sh 22g DIR/scop.jar -order DIR/syrup/bin/glucose-syrup -model:-nthreads=NBCORE:-maxmemory=20000 TMPDIR BENCHNAME
+    #+END_SRC
+
+* Example (please refer http://xcsp.org/series for example XCSP3 instances)
+  - (NOTE) we here assume 11GB/24GB can be allocated to JVM. This is
+    XCSP18 competition setting but if possible larger size is
+    preferred. 
+  - assume that the following command is executed in the 'scop-for-xcsp18' directory.
+#+BEGIN_SRC sh
+./scop.sh 16g scop.jar -both MapleCOMSPS/simp/minisat_release default /tmp examples/AllInterval-007.xml
+#+END_SRC
+
+* Overview of sCOP
+  - sCOP is a Sat-based COnstraint Programming system written in Scala 2.12.
+  - It works as follows:
+    1. encode a XCSP3 file into a DIMACS CNF file.
+    2. launch a SAT solver to solve the encoded CNF file.
+    3. the output of the SAT solver is decoded to the solution of the
+       XCSP3 instance. 
+
+* Components of sCOP
+  - scop.jar
+    - It is a fat jar containing all resources except SAT solvers
+      - XCSP3-Java-Tools (https://github.com/xcsp3team/XCSP3-Java-Tools)
+      - scop
+      - scala standard libraries (version 2.12)
+
+  - MapleCOMSPS
+    - It is an award-winning SAT solver downloaded from the following
+      URL.
+    - Note that there are several versions of MapleCOMSPS in the
+      official web page. The one we used is only available in the
+      exactly the same URL as follows.
+    - Note again, we used "simp" not "core".
+    - https://sites.google.com/a/gsd.uwaterloo.ca/maplesat/MapleCOMSPS.zip
+
+  - glucose-syrup
+    - It is an award-winning SAT solver downloaded from the following
+      URL.
+    - Note that we used the version submitted to the SAT competition 2017.
+    - https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/syrup.zip
+
+* Requirements for sCOP
+  - Java 8
+  - (Note) Scala 2.12 is not necessary since scop.jar is a fat jar
+    containing scala standard libraries.

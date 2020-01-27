@@ -1,0 +1,134 @@
+c (scop.sh) java -Xms11g -Xmx11g -Xss128m -cp scop-for-xcsp18-180731/scop.jar fun.scop.XCSP18Encode -both -solver scop-for-xcsp18-180731/MapleCOMSPS/simp/minisat_release -solverOption default -tmp /tmp -serialFile /tmp/scop-27392-serial-file.bin edt-2.xml
+
+scop both+MapleCOMSPS (1.8.0_232)
+(Encoding Process)
+
+c BEGIN-Prog: Mon Jan 27 11:45:53 CET 2020
+c PID: 27394
+c IP: 127.0.1.1
+c HOST: jean-claude-High-Kick-Precision-T1700
+c (0,0) Parsing Begin
+c (2,2) Parsing End
+c (2,2) CSP: 612 int (0 aux), 0 bool (0 aux), 35023 ctr, max domain size 160
+c (2,2) Heap : 1464 MiB used (max 10795 MiB), NonHeap : 25 MiB used (max 0 MiB)
+c (2,2) Constraint Name Generate Begin
+c (2,2) Ctr:edt-2.xml,Eq:Imp:Instantiation:IntVar:Lt:Ne
+c (2,2) Constraint Name Generate End
+c (2,2) Heap : 1520 MiB used (max 10795 MiB), NonHeap : 25 MiB used (max 0 MiB)
+c (2,2) CSP to CSPinCNF Begin
+c (2,2) translated 3503 (10%) constraints
+c (2,2) translated 7005 (20%) constraints
+c (2,2) translated 10507 (30%) constraints
+c (2,2) translated 14010 (40%) constraints
+c (2,2) translated 17512 (50%) constraints
+c (2,2) translated 21014 (60%) constraints
+c (2,2) translated 24517 (70%) constraints
+c (2,2) translated 28019 (80%) constraints
+c (3,3) translated 31521 (90%) constraints
+c (3,3) translated 35023 (100%) constraints
+c (3,3) STATISTICS1:edt-2.xml,Eq:Imp:Instantiation:IntVar:Lt:Ne,612,35327,160,160,4,2,160:18;159:617;158:2500;157:2400;156:4741;155:4360;154:6530;153:4494;152:4926;151:4435;5:11628;1:23256,160:1824;159:7774;158:11449;157:6870;156:10076;155:7327;154:9158;153:5494;152:5494;151:4576;5:23256;1:46818,4:34884;1:443,2:69905;1:612,
+c (3,3) ==========================================
+c (3,3) Both Encoding selects:
+c (3,3) Order
+c (3,3) ==========================================
+c (3,3) translated 3533 (10%) constraints
+c (3,3) translated 7066 (20%) constraints
+c (3,3) translated 10599 (30%) constraints
+c (3,3) translated 14131 (40%) constraints
+c (4,4) translated 17664 (50%) constraints
+c (4,4) translated 21197 (60%) constraints
+c (4,4) translated 24729 (70%) constraints
+c (4,4) translated 28262 (80%) constraints
+c (4,4) translated 31795 (90%) constraints
+c (4,4) translated 35327 (100%) constraints
+c (4,4) CSP to CSPinCNF End
+c (4,4) CSP: 612 int (0 aux), 0 bool (0 aux), 35633 ctr, max domain size 160
+c (4,4) Heap : 2647 MiB used (max 10795 MiB), NonHeap : 30 MiB used (max 0 MiB)
+c (4,4) CSPinCNF Propagation Begin
+c (5,5) 0 values, 28468 unsatisfiable literals, and 18656 valid clauses are removed
+c (5,5) CSPinCNF Propagation End
+c (5,5) CSP: 612 int (0 aux), 0 bool (0 aux), 16977 ctr, max domain size 160
+c (5,5) Heap : 199 MiB used (max 10795 MiB), NonHeap : 29 MiB used (max 0 MiB)
+c (5,5) Simplify CSPinCNF Begin
+c (5,5) Simplify CSPinCNF End
+c (5,5) CSP: 612 int (0 aux), 46512 bool (46512 aux), 63489 ctr, max domain size 160
+c (5,5) Heap : 636 MiB used (max 10795 MiB), NonHeap : 30 MiB used (max 0 MiB)
+c (5,5) Calculate Precise Domain Begin
+c (5,5) 0 values are removed by re-calculation
+c (5,5) Calculate Precise Domain End
+c (5,5) CSP: 612 int (0 aux), 46512 bool (46512 aux), 63489 ctr, max domain size 160
+c (5,5) Heap : 636 MiB used (max 10795 MiB), NonHeap : 30 MiB used (max 0 MiB)
+c (5,5) CSPinCNF to SatSolver Begin
+c (6,6) 6349 (10 %) CSP clauses are encoded (70708 SAT variables, 428024 SAT clauses)
+c (7,7) 12698 (20 %) CSP clauses are encoded (70708 SAT variables, 831098 SAT clauses)
+c (7,7) 19047 (30 %) CSP clauses are encoded (70708 SAT variables, 1232330 SAT clauses)
+c (8,8) 25396 (40 %) CSP clauses are encoded (70708 SAT variables, 1633807 SAT clauses)
+c (9,9) 31745 (50 %) CSP clauses are encoded (70708 SAT variables, 2035750 SAT clauses)
+c (9,9) 38094 (60 %) CSP clauses are encoded (70708 SAT variables, 2438483 SAT clauses)
+c (10,10) 44443 (70 %) CSP clauses are encoded (70708 SAT variables, 2843403 SAT clauses)
+c (11,10) 50792 (80 %) CSP clauses are encoded (70708 SAT variables, 3245315 SAT clauses)
+c (11,11) 57141 (90 %) CSP clauses are encoded (70708 SAT variables, 3650052 SAT clauses)
+c (11,11) 63489 (100 %) CSP clauses are encoded (70708 SAT variables, 3740170 SAT clauses)
+c (11,11) Launch Command will be: scop-for-xcsp18-180731/MapleCOMSPS/simp/minisat_release
+c (11,11) CSPinCNF to SatSolver End
+c (11,11) Heap : 735 MiB used (max 10795 MiB), NonHeap : 31 MiB used (max 0 MiB)
+c (12,11) STATISTICS2:edt-2.xml,Eq:Imp:Instantiation:IntVar:Lt:Ne,47124,63489,160,160,4,2,160:12;159:60;158:1126;157:1282;156:2677;155:2745;154:4397;153:3310;152:3694;151:4090;5:23256,160:1216;159:1525;158:7937;157:4597;156:6725;155:5209;154:6727;153:4288;152:4280;151:4282;5:46512;2:103448,4:11628;2:51724;1:137,2:46649;1:103448,
+c (12,11) 70708 bool, 3740323 clause
+c (12,11) Export Begin
+c (12,11) Export to /tmp/scop-27392-serial-file.bin
+c (12,11) Export End
+c (12,11) Export File Size: 0.11 MB
+c (12,11) 2,2,4,5,5,5,11,STOP-AFTER(DIMACS)
+c END-Prog: Mon Jan 27 11:46:05 CET 2020
+c (scop.sh) java -Xms4g -Xmx4g -Xss128m -cp scop-for-xcsp18-180731/scop.jar fun.scop.XCSP18Solve /tmp/scop-27392-serial-file.bin
+c (0,0) Read Serial File Begin
+c (0,0) /tmp/scop-27392-serial-file.bin
+c (0,0) Read Serial File End
+
+scop order+MapleCOMSPS (1.8.0_232)
+(Solving Process)
+
+c BEGIN-Prog: Mon Jan 27 11:46:05 CET 2020
+c PID: 27415
+c IP: 127.0.1.1
+c HOST: jean-claude-High-Kick-Precision-T1700
+c (0,0) SatSolver.solve Begin
+c (0,0) 0 bool, 0 clause
+c (0,0) scop-for-xcsp18-180731/MapleCOMSPS/simp/minisat_release /tmp/edt-2.xml-scop-27394.cnf
+c (6,0) c This is COMiniSatPS.
+c (6,0) c WARNING: for repeatability, setting FPU to use double precision
+c (6,0) c ============================[ Problem Statistics ]=============================
+c (6,0) c |                                                                             |
+c (6,0) c |  Number of variables:         70708                                         |
+c (6,0) c |  Number of clauses:         3740262                                         |
+c (6,0) c |  Parse time:                   0.57 s                                       |
+c (6,0) c |  Eliminated clauses:           0.35 Mb                                      |
+c (6,0) c Reduced to 49297 vars, 3602156 cls (grow=0)
+c (6,0) c No iterative elimination performed. (vars=49297, c/v ratio=73.1)
+c (6,0) c |  Simplification time:          5.32 s                                       |
+c (6,0) c |                                                                             |
+c (6,0) c ============================[ Search Statistics ]==============================
+c (6,0) c | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
+c (6,0) c |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
+c (6,0) c ===============================================================================
+c (6,0) c ===============================================================================
+c (6,0) c restarts              : 1
+c (6,0) c conflicts             : 14             (2 /sec)
+c (6,0) c decisions             : 7641           (0.00 % random) (1260 /sec)
+c (6,0) c propagations          : 52520          (8658 /sec)
+c (6,0) c conflict literals     : 57             (5.00 % deleted)
+c (6,0) c CPU time              : 6.06583 s
+c (6,0) 
+c (6,0) s SATISFIABLE
+c (6,0) SatSolver.solve End
+c (6,0) Heap : 163 MiB used (max 3925 MiB), NonHeap : 16 MiB used (max 0 MiB)
+c (6,0) Show results Begin
+s SATISFIABLE
+v <instantiation>
+v     <list>r[0] r[1] r[2] r[3] r[4] r[5] r[6] r[7] r[8] r[9] r[10] r[11] r[12] r[13] r[14] r[15] r[16] r[17] r[18] r[19] r[20] r[21] r[22] r[23] r[24] r[25] r[26] r[27] r[28] r[29] r[30] r[31] r[32] r[33] r[34] r[35] r[36] r[37] r[38] r[39] r[40] r[41] r[42] r[43] r[44] r[45] r[46] r[47] r[48] r[49] r[50] r[51] r[52] r[53] r[54] r[55] r[56] r[57] r[58] r[59] r[60] r[61] r[62] r[63] r[64] r[65] r[66] r[67] r[68] r[69] r[70] r[71] r[72] r[73] r[74] r[75] r[76] r[77] r[78] r[79] r[80] r[81] r[82] r[83] r[84] r[85] r[86] r[87] r[88] r[89] r[90] r[91] r[92] r[93] r[94] r[95] r[96] r[97] r[98] r[99] r[100] r[101] r[102] r[103] r[104] r[105] r[106] r[107] r[108] r[109] r[110] r[111] r[112] r[113] r[114] r[115] r[116] r[117] r[118] r[119] r[120] r[121] r[122] r[123] r[124] r[125] r[126] r[127] r[128] r[129] r[130] r[131] r[132] r[133] r[134] r[135] r[136] r[137] r[138] r[139] r[140] r[141] r[142] r[143] r[144] r[145] r[146] r[147] r[148] r[149] r[150] r[151] r[152] s[0] s[1] s[2] s[3] s[4] s[5] s[6] s[7] s[8] s[9] s[10] s[11] s[12] s[13] s[14] s[15] s[16] s[17] s[18] s[19] s[20] s[21] s[22] s[23] s[24] s[25] s[26] s[27] s[28] s[29] s[30] s[31] s[32] s[33] s[34] s[35] s[36] s[37] s[38] s[39] s[40] s[41] s[42] s[43] s[44] s[45] s[46] s[47] s[48] s[49] s[50] s[51] s[52] s[53] s[54] s[55] s[56] s[57] s[58] s[59] s[60] s[61] s[62] s[63] s[64] s[65] s[66] s[67] s[68] s[69] s[70] s[71] s[72] s[73] s[74] s[75] s[76] s[77] s[78] s[79] s[80] s[81] s[82] s[83] s[84] s[85] s[86] s[87] s[88] s[89] s[90] s[91] s[92] s[93] s[94] s[95] s[96] s[97] s[98] s[99] s[100] s[101] s[102] s[103] s[104] s[105] s[106] s[107] s[108] s[109] s[110] s[111] s[112] s[113] s[114] s[115] s[116] s[117] s[118] s[119] s[120] s[121] s[122] s[123] s[124] s[125] s[126] s[127] s[128] s[129] s[130] s[131] s[132] s[133] s[134] s[135] s[136] s[137] s[138] s[139] s[140] s[141] s[142] s[143] s[144] s[145] s[146] s[147] s[148] s[149] s[150] s[151] s[152] t[0] t[1] t[2] t[3] t[4] t[5] t[6] t[7] t[8] t[9] t[10] t[11] t[12] t[13] t[14] t[15] t[16] t[17] t[18] t[19] t[20] t[21] t[22] t[23] t[24] t[25] t[26] t[27] t[28] t[29] t[30] t[31] t[32] t[33] t[34] t[35] t[36] t[37] t[38] t[39] t[40] t[41] t[42] t[43] t[44] t[45] t[46] t[47] t[48] t[49] t[50] t[51] t[52] t[53] t[54] t[55] t[56] t[57] t[58] t[59] t[60] t[61] t[62] t[63] t[64] t[65] t[66] t[67] t[68] t[69] t[70] t[71] t[72] t[73] t[74] t[75] t[76] t[77] t[78] t[79] t[80] t[81] t[82] t[83] t[84] t[85] t[86] t[87] t[88] t[89] t[90] t[91] t[92] t[93] t[94] t[95] t[96] t[97] t[98] t[99] t[100] t[101] t[102] t[103] t[104] t[105] t[106] t[107] t[108] t[109] t[110] t[111] t[112] t[113] t[114] t[115] t[116] t[117] t[118] t[119] t[120] t[121] t[122] t[123] t[124] t[125] t[126] t[127] t[128] t[129] t[130] t[131] t[132] t[133] t[134] t[135] t[136] t[137] t[138] t[139] t[140] t[141] t[142] t[143] t[144] t[145] t[146] t[147] t[148] t[149] t[150] t[151] t[152] g[0] g[1] g[2] g[3] g[4] g[5] g[6] g[7] g[8] g[9] g[10] g[11] g[12] g[13] g[14] g[15] g[16] g[17] g[18] g[19] g[20] g[21] g[22] g[23] g[24] g[25] g[26] g[27] g[28] g[29] g[30] g[31] g[32] g[33] g[34] g[35] g[36] g[37] g[38] g[39] g[40] g[41] g[42] g[43] g[44] g[45] g[46] g[47] g[48] g[49] g[50] g[51] g[52] g[53] g[54] g[55] g[56] g[57] g[58] g[59] g[60] g[61] g[62] g[63] g[64] g[65] g[66] g[67] g[68] g[69] g[70] g[71] g[72] g[73] g[74] g[75] g[76] g[77] g[78] g[79] g[80] g[81] g[82] g[83] g[84] g[85] g[86] g[87] g[88] g[89] g[90] g[91] g[92] g[93] g[94] g[95] g[96] g[97] g[98] g[99] g[100] g[101] g[102] g[103] g[104] g[105] g[106] g[107] g[108] g[109] g[110] g[111] g[112] g[113] g[114] g[115] g[116] g[117] g[118] g[119] g[120] g[121] g[122] g[123] g[124] g[125] g[126] g[127] g[128] g[129] g[130] g[131] g[132] g[133] g[134] g[135] g[136] g[137] g[138] g[139] g[140] g[141] g[142] g[143] g[144] g[145] g[146] g[147] g[148] g[149] g[150] g[151] g[152]</list>
+v     <values>0 2 1 0 2 3 4 2 1 2 3 4 4 4 1 0 0 1 4 4 3 2 0 3 4 4 2 3 4 2 1 0 0 4 0 4 0 2 4 3 2 4 3 4 4 2 4 1 2 0 0 3 0 0 3 4 1 3 2 0 3 4 4 3 4 3 4 1 4 1 0 3 4 1 4 4 0 3 2 1 3 0 2 3 2 2 1 2 1 4 0 0 1 4 0 1 0 0 1 0 4 3 4 3 4 1 2 1 4 3 4 3 4 3 2 3 4 3 0 1 4 3 0 1 4 3 2 3 4 1 0 1 2 3 2 1 2 3 2 3 4 3 4 3 4 1 4 3 2 3 4 3 4 5 22 30 29 34 85 43 47 148 48 49 64 8 15 65 24 27 124 28 31 100 36 37 63 38 24 25 104 27 28 147 31 128 129 135 136 137 16 18 20 26 29 103 30 82 130 143 144 145 0 3 84 16 21 144 22 36 145 37 38 61 41 9 102 14 18 32 43 34 101 59 146 124 126 125 4 6 60 10 11 120 12 14 83 15 20 21 39 79 40 1 2 5 6 7 86 9 10 15 11 12 17 13 16 80 12 0 25 1 14 2 11 3 13 4 7 5 6 8 9 81 10 18 19 23 24 62 22 19 122 20 81 21 26 42 44 45 127 46 125 7 8 17 23 33 123 35 121 65 82 78 80 79 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 2 2 2 2 2 2 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 8 8 8 8 8 8 0 0 1 2 0 1 2 0 1 2 1 2 0 0 1 2 0 1 2 0 1 2 0 1 2 0 0 1 2 0 1 2 0 0 0 0 0 0 0 1 2 0 1 2 0 0 0 0 0 0 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 1 2 1 2 1 2 1 2 1 2 0 0 1 2 0 1 2 0 1 2 0 1 2 1 2 0 0 1 2 0 1 2 0 1 2 0 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2</values>
+v </instantiation>
+c (6,0) Show results End
+c (6,0) Heap : 163 MiB used (max 3925 MiB), NonHeap : 18 MiB used (max 0 MiB)
+c (6,0) 6,6,STOP-AFTER(ALL)
+c END-Prog: Mon Jan 27 11:46:12 CET 2020
